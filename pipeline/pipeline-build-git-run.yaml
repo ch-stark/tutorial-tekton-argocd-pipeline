@@ -1,10 +1,10 @@
 apiVersion: tekton.dev/v1alpha1
-  kind: PipelineRun
-  metadata:
-    annotations:
-    labels:
-      tekton.dev/pipeline: build-git
-    name: build-git-run-gcskd
+kind: PipelineRun
+metadata:
+  annotations:
+  labels:
+    tekton.dev/pipeline: build-git
+  name: build-git-run-gcskd
   spec:
     params:
     - name: GIT_REPOSITORY
