@@ -3,11 +3,11 @@
 This tutorials shows the concept of seperation of concerns in DevOps.
 The project is setup in 3 repos (not all teams will have write access to all of them)
 - This git repo only contains the pipeline setup 
-  - https://github.com/csantanapr/tutorial-tekton-argocd-pipeline
+  - https://github.com/ch-stark/tutorial-tekton-argocd-pipeline
 - The git repo that contains only the application source code
-  - https://github.com/csantanapr/tutorial-tekton-argocd-code
+  - https://github.com/ch-stark/tutorial-tekton-argocd-code
 - The git repo that contains only the infrastructure manifests (yaml) 
-  - https://github.com/csantanapr/tutorial-tekton-argocd-infra
+  - https://github.com/ch-stark/tutorial-tekton-argocd-infra
 
 - We will be using Tekton to build the container image, and update the Infra Git repo.
 - We will be using ArgoCD to deploy the application from the infra git repo
@@ -77,7 +77,7 @@ argocd login --username admin --password $ARGOCD_PASSWORD $ARGOCD_SERVER
 - Create the App
 ```bash
 export ARGOCD_APP=$(oc project -q)
-export GIT_REPOSITORY_URL="https://github.com/csantanapr/tutorial-tekton-argocd-infra"
+export GIT_REPOSITORY_URL="https://github.com/ch-stark/tutorial-tekton-argocd-infra"
 export GIT_MANIFEST_DIR="yamls/ocp"
 ```
 ```bash
@@ -109,7 +109,7 @@ tkn resources ls -n $NAMESPACE
 ```
 ```
 NAME     TYPE    DETAILS
-source   git     url: https://github.com/csantanapr/tutorial-tekton-argocd-code
+source   git     url: https://github.com/ch-stark/tutorial-tekton-argocd-code
 image    image   url: image-registry.openshift-image-registry.svc:5000/$NAMESPACE/app
 ```
 
