@@ -3,10 +3,6 @@ items:
 - apiVersion: tekton.dev/v1alpha1
   kind: PipelineRun
   metadata:
-    generateName: build-git-run-
-    generation: 1
-    labels:
-      tekton.dev/pipeline: build-git
     name: build-git-run-gcskd
   spec:
     params:
