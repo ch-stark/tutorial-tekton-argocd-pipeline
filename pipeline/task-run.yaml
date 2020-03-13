@@ -1,0 +1,33 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: tekton-pipelines
+    tekton.dev/pipeline: build-git
+    tekton.dev/pipelineRun: build-git-run-gcskd
+    tekton.dev/pipelineTask: task
+    tekton.dev/task: build-git
+  name: build-git-run-gcskd-task-m5tns
+spec:
+  inputs:
+    params:
+    - name: GIT_REPOSITORY
+      value: github.com/ch-stark/tutorial-tekton-argocd-infra
+    - name: GIT_EMAIL
+      value: cstark@redhat.com
+    - name: GIT_NAME
+      value: forked from Carlos Santana
+    resources:
+    - name: source
+      resourceRef:
+        name: source
+    - name: image
+      resourceRef:
+        name: image
+  outputs: {}
+  podTemplate: {}
+  serviceAccountName: pipeline-service-account
+  taskRef:
+    kind: Task
+    name: build-git
+  timeout: 1h0m0s
