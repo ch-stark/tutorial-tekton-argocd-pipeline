@@ -1,6 +1,4 @@
-apiVersion: v1
-items:
-- apiVersion: tekton.dev/v1alpha1
+apiVersion: tekton.dev/v1alpha1
   kind: PipelineRun
   metadata:
     annotations:
@@ -29,6 +27,4 @@ items:
         name: image
     serviceAccountName: pipeline-service-account
     timeout: 1h0m0s
-kind: List
-metadata: {}
   
