@@ -3,8 +3,11 @@ items:
 - apiVersion: tekton.dev/v1alpha1
   kind: PipelineRun
   metadata:
+    annotations:
+    labels:
+      tekton.dev/pipeline: build-git
     name: build-git-run-gcskd
-  spec:
+ spec:
     params:
     - name: GIT_REPOSITORY
       value: github.com/ch-stark/tutorial-tekton-argocd-infra
@@ -26,5 +29,6 @@ items:
         name: image
     serviceAccountName: pipeline-service-account
     timeout: 1h0m0s
-
+kind: List
+metadata: {}
   
