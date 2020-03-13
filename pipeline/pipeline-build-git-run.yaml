@@ -28,7 +28,7 @@ items:
     - name: image
       resourceRef:
         name: image
-    serviceAccountName: pipeline
+    serviceAccountName: pipeline-service-account
     timeout: 1h0m0s
 
   
