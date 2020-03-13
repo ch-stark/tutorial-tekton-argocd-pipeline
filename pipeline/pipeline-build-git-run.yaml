@@ -5,8 +5,8 @@ metadata:
   labels:
     tekton.dev/pipeline: build-git
   name: build-git-run-gcskd
-  spec:
-    params:
+spec:
+  params:
     - name: GIT_REPOSITORY
       value: github.com/ch-stark/tutorial-tekton-argocd-infra
     - name: GIT_MANIFEST_DIR
