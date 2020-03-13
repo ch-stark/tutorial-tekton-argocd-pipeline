@@ -25,6 +25,6 @@ spec:
     - name: image
       resourceRef:
         name: image
-    serviceAccountName: pipeline-service-account
-    timeout: 1h0m0s
+  serviceAccountName: pipeline-service-account
+  timeout: 1h0m0s
   
