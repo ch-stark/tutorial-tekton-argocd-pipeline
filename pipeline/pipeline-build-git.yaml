@@ -20,11 +20,11 @@ spec:
     - name: GIT_EMAIL
       type: string
       description: Email for Git author
-      default: chstark@redhat.com
+      default: cstark@redhat.com
     - name: GIT_NAME
       type: string
       description: Name for Git author
-      default: forked from Christian Stark
+      default: forked from Carlos Santana
   tasks:
     - name: task
       taskRef:
