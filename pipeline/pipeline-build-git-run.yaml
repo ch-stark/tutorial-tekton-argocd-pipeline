@@ -5,7 +5,7 @@ apiVersion: tekton.dev/v1alpha1
     labels:
       tekton.dev/pipeline: build-git
     name: build-git-run-gcskd
- spec:
+  spec:
     params:
     - name: GIT_REPOSITORY
       value: github.com/ch-stark/tutorial-tekton-argocd-infra
