@@ -6,15 +6,6 @@ spec:
   pipelineRef:
     name: pipeline-build-git
   serviceAccounts:
-    - taskName: build-and-push
+    - taskName: build-git
       serviceAccount: reversewords-pipeline
-  params:
-    - name: imageTag
-      value: "testing"
-  resources:
-    - name: app-git
-      resourceRef:
-        name: reverse-words-git
-    - name: app-image
-      resourceRef:
-        name: reverse-words-image
+  
