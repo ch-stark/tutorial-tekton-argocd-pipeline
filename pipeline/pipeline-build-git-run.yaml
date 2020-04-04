@@ -1,12 +1,15 @@
-apiVersion: tekton.dev/v1alpha1
-kind: PipelineRun
-metadata:
-  annotations:
-  labels:
-    tekton.dev/pipeline: build-git
-  name: build-git-run-gcskd
-spec:
-  params:
+apiVersion: v1
+items:
+- apiVersion: tekton.dev/v1alpha1
+  kind: PipelineRun
+  metadata:
+    annotations:
+    labels:
+      tekton.dev/pipeline: build-git
+    name: build-git-run-dcrbs
+    namespace: tekton-argocd
+  spec:
+    params:
     - name: GIT_REPOSITORY
       value: github.com/ch-stark/tutorial-tekton-argocd-infra
     - name: GIT_MANIFEST_DIR
@@ -17,7 +20,6 @@ spec:
       value: forked from Carlos Santana
     pipelineRef:
       name: build-git
-    serviceAccountName: pipeline-service-account  
     podTemplate: {}
     resources:
     - name: source
@@ -26,3 +28,9 @@ spec:
     - name: image
       resourceRef:
         name: image
+    serviceAccountName: pipeline
+    timeout: 1h0m0s
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
